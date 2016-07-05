@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.josh.test.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USERS"
+        android:id="@+id/userLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEXT"
+        android:id="@+id/userList"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/userLabel"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD USER"
+        android:id="@+id/addUserButton"
+        android:onClick="addUser"
+        android:layout_alignTop="@+id/buttonCourses"
+        android:layout_alignRight="@+id/buttonViewCourses"
+        android:layout_alignEnd="@+id/buttonViewCourses" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD COURSE"
+        android:id="@+id/buttonCourses"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:onClick="toCourses" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COURSES"
+        android:id="@+id/buttonViewCourses"
+        android:onClick="viewCourses"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/buttonCourses"
+        android:layout_toStartOf="@+id/buttonCourses" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLEAN"
+        android:id="@+id/buttonClean"
+        android:layout_alignTop="@+id/buttonViewCourses"
+        android:layout_toRightOf="@+id/buttonCourses"
+        android:layout_toEndOf="@+id/buttonCourses"
+        android:onClick="doClean" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD OUTING"
+        android:id="@+id/buttonOutings"
+        android:layout_alignTop="@+id/buttonCourses"
+        android:layout_toRightOf="@+id/buttonCourses"
+        android:layout_toEndOf="@+id/buttonCourses"
+        android:onClick="addOuting" />
+
+</RelativeLayout>

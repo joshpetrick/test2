@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Golf Outingz</string>
+    <string name="locale_prompt">Choose A Country...</string>
+    <string-array name="locale_list">
+        <item>USA</item>
+        <item>France</item>
+        <item>Mexico</item>
+        <item>Ireland</item>
+    </string-array>
+</resources>
