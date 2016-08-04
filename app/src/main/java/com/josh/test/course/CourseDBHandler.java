@@ -39,6 +39,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
                 NAME_COL +" TEXT "+
                 LOCATION_COL +" TEXT "+
                 LOCALE_COL +" TEXT )");
+
     }
 
     @Override
@@ -54,6 +55,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
                 + NAME_COL +" TEXT, "
                 + LOCATION_COL +" TEXT, "
                 + LOCALE_COL + " TEXT)");
+
     }
 
     public void addCourse(GolfCourse tempCourse)
@@ -106,7 +108,7 @@ public class CourseDBHandler extends SQLiteOpenHelper {
         String tempName = "";
         String tempLocation = "";
 
-        String queryString = "SELECT * FROM "+ TABLE_NAME + " WHERE "+LOCALE_COL+" = '"+locale+"'";
+        String queryString = "SELECT * FROM "+ TABLE_NAME + " WHERE "+LOCALE_COL+" = '"+locale+"';";
         SQLiteDatabase db = getWritableDatabase();
         Cursor c = db.rawQuery(queryString,null);
 

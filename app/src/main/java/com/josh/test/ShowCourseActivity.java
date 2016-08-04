@@ -6,16 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-import com.josh.test.outing.OutingDBHandler;
+import com.josh.test.course.CourseDBHandler;
 
 public class ShowCourseActivity extends AppCompatActivity {
-    OutingDBHandler myDB;
+    CourseDBHandler myDB;
     EditText courses ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_course);
-        myDB = new OutingDBHandler(this,null,null,1);
+        myDB = new CourseDBHandler(this,null,null,1 );
 
         courses = (EditText)findViewById(R.id.editTextCourses);
         courses.setText(myDB.printAllUsers());

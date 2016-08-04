@@ -5,15 +5,17 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.AsyncTask;
 
 /**
  * Created by Josh on 7/2/2016.
  */
-public class UserDBHandler extends SQLiteOpenHelper {
+public class UserDBHandler extends SQLiteOpenHelper implements Runnable {
 
     //need to make a property file
     public static final String DATABASE_NAME="GolfOuting.db";
     public static final String TABLE_NAME="User_Table";
+    private String taskChoice = "";
 
     public static final String COL_1="ID";
     public static final String COL_2="NAME";
@@ -46,6 +48,7 @@ public class UserDBHandler extends SQLiteOpenHelper {
 
     public void addUser(User tempUser)
     {
+
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL_2,tempUser.getFirstName());
@@ -89,5 +92,18 @@ public class UserDBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         db.close();
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    public class Task extends AsyncTask<User,Void,String>{
+
+        @Override
+        protected String doInBackground(User... params) {
+            return null;
+        }
     }
 }

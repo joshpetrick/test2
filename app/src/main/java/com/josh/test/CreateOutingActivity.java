@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.josh.test.course.CourseDBHandler;
@@ -34,13 +35,24 @@ public class CreateOutingActivity extends AppCompatActivity {
                     String localeSelected = parent.getSelectedItem().toString();
 
                     ArrayList<GolfCourse> locationList = myCourseDB.getLocale(localeSelected);
-
+                    ArrayList<String> tempList = new ArrayList<>();
+                    Spinner tempSpinner = (Spinner)findViewById(R.id.spinnerLocation);
+                    System.out.println("We Here");
                     //make location
+                    for(GolfCourse temp : locationList)
+                    {
+                        tempList.add(temp.getLocation());
+                    }
+                    ArrayAdapter<String> tempAdapter = new ArrayAdapter<String>(CreateOutingActivity.this,R.layout.activity_create_outing,tempList);
+                    tempSpinner.setAdapter(tempAdapter);
+
                 }
                 else
                 {
                     //still at prompt
                 }
+
+
 
             }
 

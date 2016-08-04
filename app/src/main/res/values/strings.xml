@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Golf Outingz</string>
-    <string name="locale_prompt">Choose A Country...</string>
+    <string name="locale_prompt">Choose A Country</string>
+    <string name="location_prompt">Choose A Location</string>
+    <string name="course_prompt">Choose A Course</string>
     <string-array name="locale_list">
         <item>USA</item>
         <item>France</item>

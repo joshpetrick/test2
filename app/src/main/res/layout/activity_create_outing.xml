@@ -8,30 +8,55 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.josh.test.CreateOutingActivity">
-
+    <TextView
+        android:id="@+id/locale_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locale_prompt"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/blue"/>
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/locale_label"
         android:id="@+id/spinnerLocale"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:spinnerMode="dropdown"
+        android:prompt="@string/locale_prompt"
         android:entries="@array/locale_list"
         />
+
+    <TextView
+        android:layout_below="@+id/spinnerLocale"
+        android:id="@+id/location_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_prompt"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/blue"/>
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerLocation"
-        android:layout_below="@+id/spinnerLocale"
+        android:layout_below="@+id/location_label"
         android:layout_centerHorizontal="true"
         android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_below="@+id/spinnerLocation"
+        android:id="@+id/course_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_prompt"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/blue"/>
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerCourse"
-        android:layout_below="@+id/spinnerLocation"
+        android:layout_below="@+id/course_label"
         android:layout_centerHorizontal="true"
         android:spinnerMode="dropdown" />
 

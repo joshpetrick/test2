@@ -9,6 +9,10 @@ import android.widget.EditText;
 
 import com.josh.test.user.User;
 import com.josh.test.user.UserDBHandler;
+import com.josh.test.user.UserTaskHandler;
+
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class CreateUserActivity extends AppCompatActivity {
     UserDBHandler myDB;
@@ -27,6 +31,8 @@ public class CreateUserActivity extends AppCompatActivity {
 
     public void submitUser(View view)
     {
+        Date d1 = new Date(System.currentTimeMillis());
+        System.out.println("Button Clicked at : "+new Timestamp(d1.getTime()));
         first = (EditText)findViewById(R.id.editTextFirst);
         last = (EditText)findViewById(R.id.editTextLast);
         password = (EditText)findViewById(R.id.editTextPassword);
@@ -37,7 +43,13 @@ public class CreateUserActivity extends AppCompatActivity {
 
         User tempUser = new User(first.getText().toString(),last.getText().toString(),email.getText().toString(),password.getText().toString());
 
-        myDB.addUser(tempUser);
+        //myDB.addUser(tempUser);
+
+        //should display toast n stuff
+        new UserTaskHandler(this,myDB).addUser(tempUser);
+       // Intent t = new Intent(this,AddUserIntent.class);
+
+        //new Thread(myDB).start();
 
         startActivity(new Intent(CreateUserActivity.this,MainActivity.class));
     }
